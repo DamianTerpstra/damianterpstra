@@ -9027,4 +9027,13 @@
       border-color: #dee2e6;
     }
   }
+
+  .table tr:nth-child(even) {
+    background-color: #F5F5F5;
+  }
+
+  .img-small {
+    width: 150px;
+    height: auto;
+  }
   /*# sourceMappingURL=bootstrap.css.map */

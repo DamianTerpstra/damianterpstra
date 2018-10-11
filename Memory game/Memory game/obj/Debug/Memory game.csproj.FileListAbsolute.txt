@@ -1,0 +1,17 @@
+C:\Users\d-t11\source\repos\Memory game\Memory game\obj\Debug\Memory game.csprojAssemblyReference.cache
+C:\Users\d-t11\source\repos\Memory game\Memory game\obj\Debug\MainWindow.g.cs
+C:\Users\d-t11\source\repos\Memory game\Memory game\obj\Debug\App.g.cs
+C:\Users\d-t11\source\repos\Memory game\Memory game\obj\Debug\Memory game_MarkupCompile.cache
+C:\Users\d-t11\source\repos\Memory game\Memory game\obj\Debug\Memory game_MarkupCompile.lref
+C:\Users\d-t11\source\repos\Memory game\Memory game\obj\Debug\Window1.g.cs
+C:\Users\d-t11\source\repos\Memory game\Memory game\bin\Debug\Memory game.exe.config
+C:\Users\d-t11\source\repos\Memory game\Memory game\bin\Debug\Memory game.exe
+C:\Users\d-t11\source\repos\Memory game\Memory game\bin\Debug\Memory game.pdb
+C:\Users\d-t11\source\repos\Memory game\Memory game\obj\Debug\MainWindow.baml
+C:\Users\d-t11\source\repos\Memory game\Memory game\obj\Debug\Window1.baml
+C:\Users\d-t11\source\repos\Memory game\Memory game\obj\Debug\Memory game.g.resources
+C:\Users\d-t11\source\repos\Memory game\Memory game\obj\Debug\Memory_game.Properties.Resources.resources
+C:\Users\d-t11\source\repos\Memory game\Memory game\obj\Debug\Memory game.csproj.GenerateResource.cache
+C:\Users\d-t11\source\repos\Memory game\Memory game\obj\Debug\Memory game.csproj.CoreCompileInputs.cache
+C:\Users\d-t11\source\repos\Memory game\Memory game\obj\Debug\Memory game.exe
+C:\Users\d-t11\source\repos\Memory game\Memory game\obj\Debug\Memory game.pdb

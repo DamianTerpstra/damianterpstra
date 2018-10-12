@@ -1,87 +1,108 @@
 <!DOCTYPE html>
-<html lang="nl">
- 
-  <head>
-    <link href="bootstrap.css" type="text/css" rel="stylesheet"/>
-    <script type="text/javascript" src="bootstrap.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>Happy Brides | Wenslijst</title>
-  </head>
- 
-    <body>
- 
-      <div class="container-fluid background">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h1 class="add-margin-top font-large row-bordered">Wenslijst van Karel & Caroline</h1>
-         </div>
-       </div>
-      <br>
-       <table allign="center" style="width:70%;">
-          <tr>
-            <th>Volgorde</th>
-            <th>Naam</th>
-            <th>Acties</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Een lamp van de Ikea</td>
-            <td>
-              <button type="submit" class="btn btn-light add-margin-top-small"><a href="opmerkingen.html">Opmerkingen</a></button>
-              <button type="submit" class="btn btn-success add-margin-top-small">Claim aankoop</button>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Een exotische plant</td>
-            <td>
-              <button type="submit" class="btn btn-light add-margin-top-small"><a href="opmerkingen.html">Opmerkingen</a></button>
-              <button type="submit" class="btn btn-success add-margin-top-small">Claim aankoop</button>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Een lelijke plank van de Action</td>
-            <td>
-              <button type="submit" class="btn btn-light add-margin-top-small"><a href="opmerkingen.html">Opmerkingen</a></button>
-              <button type="submit" class="btn btn-success add-margin-top-small">Claim aankoop</button>
-            </td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Een peperdure stoelenset</td>
-            <td>
-              <button type="submit" class="btn btn-light add-margin-top-small"><a href="opmerkingen.html">Opmerkingen</a></button>
-              <button type="submit" class="btn btn-danger add-margin-top-small" disabled>Aankoop geclaimed door Maaike</button>
- 
-            </td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Een hond (niet van het asiel)</td>
-            <td>
-              <button type="submit" class="btn btn-light add-margin-top-small"><a href="opmerkingen.html">Opmerkingen</a></button>
-              <button type="submit" class="btn btn-success add-margin-top-small">Claim aankoop</button>
-            </td>
-          </tr>
-        </table>
- 
-        <div class="row">
-          <div class="col-md-6">
-            <div class="logout add-margin-top">
-              <button type="submit" class="btn btn-light" name="logout"><a href="index.html">Logout</a></button>
-            </div>
-          </div>
-          <div class="col-md-6">
-          </div>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <title>Happy Brides | Wenslijst</title>
+
+</head>
+
+  <div id="myDIV" class="header">
+    <h2 style="margin:5px">Wenslijst van Karel & Caroline</h2>
+    <input type="text" id="myInput" placeholder="...">
+    <span onclick="newElement()" class="addBtn">Voeg toe</span>
+  </div>
+  <table>
+    <tr>
+      <ul id="myUL">
+        <li class="ui-state-default">Hond</li>
+        <li class="ui-state-default">Oven</li>
+        <li class="ui-state-default">Matras</li>
+        <li class="checked">Kat</li>
+        <li class="ui-state-default">Mand</li>
+      </ul>
+    </tr>
+
+  </table>
+
+  <div class="row">
+      <div class="col-md-6">
+        <div class="logout add-margin-top">
+          <button type="submit" class="btn btn-light" name="logout"><a href="index.html">Log uit</a></button>
         </div>
- 
- 
       </div>
- 
-    </body>
- 
+      <div class="col-md-6">
+      </div>
+  </div>
+
+  <script>
+
+    $(function () {
+      $("#myUL").sortable();
+      $("#myUL").disableSelection();
+    });
+
+    // Create a "close" button and append it to each list item
+    var myNodelist = document.getElementsByTagName("LI");
+    var i;
+    for (i = 0; i < myNodelist.length; i++) {
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      myNodelist[i].appendChild(span);
+    }
+
+    // Click on a close button to hide the current list item
+    var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function () {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+
+    // Add a "checked" symbol when clicking on a list item
+    var list = document.querySelector('ul');
+    list.addEventListener('click', function (ev) {
+      if (ev.target.tagName === 'LI') {
+        ev.target.classList.toggle('checked');
+      }
+    }, false);
+
+    // Create a new list item when clicking on the "Add" button
+    function newElement() {
+      var li = document.createElement("li");
+      var inputValue = document.getElementById("myInput").value;
+      var t = document.createTextNode(inputValue);
+      li.appendChild(t);
+      if (inputValue === '') {
+        alert("U moet iets invoeren");
+      } else {
+        document.getElementById("myUL").appendChild(li);
+      }
+      document.getElementById("myInput").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+      }
+
+    }
+  </script>
+
+</body>
+
 </html>
